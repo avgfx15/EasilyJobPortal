@@ -56,6 +56,12 @@ export default class JobModel {
 
         jobs.splice(index, 1);
     }
+
+    // @ GetAll Jobs By SearchText Model
+    static getAllJobsBtSearchTextModel(searchText) {
+        const allJobBySearch = jobs.filter(job => job.companyname == searchText)
+        return allJobBySearch;
+    }
 }
 
 var jobs = [
@@ -64,5 +70,6 @@ var jobs = [
     new JobModel(2, "Angular Developer oppertunity in PUNE IND ON-SITE at Google", "Tech SDE", "Surat Remote", "Google", "20 - 25 Lpa", "2024-01-02", ["c++", "React", "Node Js", "SQL", "JS"], 11, "2021-01-25", []),
     new JobModel(3, "SDE oppertunity in BANGALORE IND at Juspay", "Tech Full Stack Developer", "Surat Remote", "Juspay", "15-17 Lpa", "2024-01-30", ["React", "Angular", "Node Js", "MongoDB", "JS"], 13, "2021-01-25", []),
     new JobModel(4, "Simplilearn", "Tech Full Stack Developer", "Surat Remote", "Simplilearn", "10-12 Lpa", "2024-01-20", ["React", "Angular", "Node Js", "MongoDB", "JS"], 13, "2021-01-25", [],),
+    new JobModel(5, "Simplilearn", "Tech Full Stack Developer", "Mumbai", "Simplilearn", "17-19 Lpa", "2024-01-20", ["React", "Node Js", "MongoDB", "JS"], 7, "2021-01-25", [],),
 ];
 

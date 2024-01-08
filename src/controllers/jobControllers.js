@@ -97,4 +97,12 @@ export default class JobControllers {
 
         return res.render('jobsPage', { Jobs: allJobs, userEmail: req.session.userEmail })
     }
+
+    //+ Search Job By Company Name Controller 
+    searchJobByCompanyNameController = async (req, res) => {
+        const { searchText } = req.body;
+        const jobs = await JobModel.getAllJobsBtSearchTextModel(searchText);
+
+        return res.render('jobsPage', { Jobs: jobs, userEmail: req.session.userEmail })
+    }
 }

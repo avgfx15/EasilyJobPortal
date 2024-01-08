@@ -14,6 +14,7 @@ import applicantFormValidationRequest from './middleware/applicantFormValidation
 import session from 'express-session';
 import { auth } from './middleware/authMiddleware.js';
 import Error404Controller from './src/controllers/404PageController.js';
+import JobModel from './src/models/jobModel.js';
 
 //// App setting with express
 const app = express();
@@ -102,7 +103,7 @@ app.get('/jobs/:id/delete', auth, jobControllers.deleteJobByIdController);
 
 // + POST Apply For Job By Id Uploading Resume
 
-app.post('/apply/:id', upload.single('resumePath'),  applicantControllers.applyJobApplicantController);
+app.post('/apply/:id', upload.single('resumePath'), applicantControllers.applyJobApplicantController);
 
 
 
@@ -128,6 +129,9 @@ app.post('/jobs/:id/applicants/:applicantid/update', auth, upload.single('resume
 
 app.get('/jobs/:id/applicants/:applicantid/delete', auth, applicantControllers.deleteApplicantByApplicantIdByController);
 
+// + Search Job By Search tab
+
+app.post('/:search', jobControllers.searchJobByCompanyNameController)
 
 // ! Error Page - /404
 
