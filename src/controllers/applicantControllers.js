@@ -74,6 +74,8 @@ export default class ApplicantControllers {
         const applicantId = req.params.applicantid;
 
         const jobExist = await JobModel.getJobDetailsByIdModel(jobId);
+        const allApplicants = ApplicantModel.getAllApplicantByJobIdModel(jobId);
+        const noOfApplicants = allApplicants.length;
 
         if (jobExist) {
 
@@ -82,7 +84,8 @@ export default class ApplicantControllers {
             const applyer = await ApplicantModel.getApplicantDetailsByApplicantIdModel(jobId, applicantId);
             if (applyer) {
                 const updateApplyer = await ApplicantModel.updateApplicantDataByApplicantIdModel(jobId, applicantId, { name, email, contact, resumePath });
-                return res.render('allApplicantsDetails', { errorMessage: null, applicant: updateApplyer, jobExist: jobExist, allApplicants: jobExist.applicants, userEmail: req.session.userEmail })
+
+                return res.render('allApplicantsDetails', { errorMessage: null, applicant: updateApplyer, jobExist: jobExist, allApplicants: jobExist.applicants, noOfApplicants: noOfApplicants, userEmail: req.session.userEmail })
             } else {
                 return res.status(401).send('Applicant not found');
             }
