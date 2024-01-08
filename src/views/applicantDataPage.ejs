@@ -1,0 +1,45 @@
+<div class="min-vh-100 p-5 mt-5">
+    <div class="container mx-auto p-2 d-flex align-items-centre justify-content-around flex-wrap">
+
+        <div class="card bg-transparent border border-light d-inline">
+
+            <h5 class="card-header text-dark bg-light p-3"><span class="text-primary fw-bolder">
+                    <%= applicant.name%>
+                </span> apply for the job of <span class="text-success fw-bold">
+                    <%= jobExist.jobcategory%>
+                </span>
+            </h5>
+            <div class="card-body">
+                <h5 class="card-title text-white fw-bolder p-3">Applicant Name : <span class="text-success">
+                        <%= applicant.name%>
+                    </span>
+                </h5>
+                <p class="card-text text-white fw-bold p-3"> Email : <span class="text-warning ">
+                        <%= applicant.email%>
+                    </span>
+                </p>
+                <p class="card-text text-white fw-bold p-3"> Contact : <span class="text-info ">
+                        <%= applicant.contact%>
+                    </span>
+                </p>
+                <p class="card-text text-danger  card-header  p-3 fw-bold m-0 bg-light">
+                    <span class="text-danger fw-bold ">
+                        <%= applicant.name%>
+                    </span> apply At
+                </p>
+                <p class="card-text text-white fw-bold p-3"> Company Name : <span class="text-primary ">
+                        <%= jobExist.companyname%>
+                    </span>
+                </p>
+                <p class="card-text text-white fw-bold p-3"> Job Location : <span class="text-warning ">
+                        <%= jobExist.joblocation%>
+                    </span>
+                </p>
+            </div>
+            <a class=" btn btn-info text-white text-decoration-none py-2 m-3" href="#" onClick="history.go(-1); return
+                false;">Back To All Applicants Page</a>
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="min-vh-100 p-5 mt-5">
+    <div class="container">
+        <h1 class="text-white mb-2">Update Job</h1>
+        <%if(errorMessage){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= errorMessage %>
+            </div>
+            <%}%>
+
+                <form action="/jobs/<%= jobExist.id %>/update" method="post" class="loginForm">
+                    <div>
+                        <input type="hidden" class="form-control" name="id" aria-label="Username"
+                            value="<%= jobExist.id %>" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Company Name</span>
+                        <input type="text" class="form-control" name="companyname" aria-label="Username"
+                            value="<%= jobExist.companyname %>" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Job Category</span>
+                        <input type="text" class="form-control" name="jobcategory" aria-label="Username"
+                            value="<%= jobExist.jobcategory %>" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Job Designation</span>
+                        <input type="text" class="form-control" name="jobdesignation" aria-label="Username"
+                            value="<%= jobExist.jobdesignation %>" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Job Location</span>
+                        <input type="text" class="form-control" name="joblocation" aria-label="Username"
+                            value="<%= jobExist.joblocation %>" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Salary</span>
+                        <input type="text" class="form-control" name="salary" aria-label="Username"
+                            value="<%= jobExist.salary %>" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <select required="" multiple="" name="skillsrequired" class="form-select"
+                            aria-label="Default select example">
+                            <option selected="" disabled="">select skills required for this job</option>
+                            <option value="React">React</option>
+                            <option value="NodeJs">NodeJs</option>
+                            <option value="Angular">Angular</option>
+                            <option value="MongoDB">MongoDB</option>
+                            <option value="SQL">SQL</option>
+                            <option value="Express">Express</option>
+                            <option value="Java">Java</option>
+                            <option value="SpringBoot">SpringBoot</option>
+                            <option value="C++">C++</option>
+                            <option value="Data Structures &amp; Algo">Data Structures &amp; Algo</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Job Apply Date</span>
+                        <input type="date" class="form-control" name="applyby" aria-label="Username"
+                            value="<%= jobExist.applyby %>" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Job Posted Date</span>
+                        <input type="date" class="form-control" name="jobposted" aria-label="Username"
+                            value="<%= jobExist.jobposted%>" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Number Of Opening Job</span>
+                        <input type="number" class="form-control" name="numberofopenings" aria-label="Username"
+                            value="<%= jobExist.numberofopenings %>" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <button type="submit" class="btn  loginBtn">Update Job</button>
+                    </div>
+                </form>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="min-vh-100 p-5 mt-5">
+    <div class="container">
+        <h1 class="text-white mb-2">Registration Form</h1>
+        <%if(errorMessage){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= errorMessage %>
+            </div>
+            <%}%>
+
+                <form action="/register" method="post" class="loginForm">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Name</span>
+                        <input type="text" class="form-control" name="name" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Email</span>
+                        <input type="text" class="form-control" name="email" aria-label="email"
+                            aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Password</span>
+                        <input type="text" class="form-control" name="password" aria-label="password"
+                            aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Mobile No</span>
+                        <input type="text" class="form-control" name="contact" aria-label="mobile"
+                            aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Role</span>
+                        <select class="form-select" aria-label="Default select example" name="role">
+                            <!-- <option selected>Select your Role</option> -->
+                            <option value="Job Seeker">Job Seeker</option>
+                            <option value="Recruter" selected>Recruter</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3">
+                        <button type="submit" class="btn  loginBtn">Register</button>
+                    </div>
+                </form>
+    </div>
+</div>

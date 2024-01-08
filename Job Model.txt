@@ -1,0 +1,26 @@
+{
+    id: 5,
+    jobcategory: 'Full Stack Developer, Web Developement, Coding Tech, Trainer',
+    jobdesignation: 'Tech Developer',
+    joblocation: 'Surat',
+    companyname: 'Stacodev',
+    salary: '157000',
+    applyby: '2023-12-31',
+    skillsrequired: 'HTML, CSS, JS, React, Angular, Next, MongoDB, MySql, NodeJS, Github, Jenkins, Docker, AWS cloud Services',
+    numberofopenings: '25',
+    jobposted: '2024-01-03',
+    applicants: []
+  }
+{
+    id: 6,
+    jobcategory: 'Stack Developer, Web Coder, Coding Tech, Trainer',
+    jobdesignation: 'Tech Developer',
+    joblocation: 'Surat',
+    companyname: 'AVGfx',
+    salary: '157000',
+    applyby: '2023-12-31',
+    skillsrequired: 'HTML, CSS, JS, React, Angular, Next, MongoDB, MySql, NodeJS, Github, Jenkins, Docker, AWS cloud Services',
+    numberofopenings: '19',
+    jobposted: '2024-01-03',
+    applicants: []
+  }

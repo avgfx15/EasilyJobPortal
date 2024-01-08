@@ -1,0 +1,114 @@
+<div class="min-vh-100 p-5 mt-5">
+    <div class="container mx-auto p-2 d-flex align-items-centre justify-content-around flex-wrap">
+        <div class="card mb-3">
+            <img src="/images/jobDetails.png" class="card-img-top" alt="...">
+            <div class="card-body p-3">
+                <h3 class="card-title text-primary">
+                    <%= jobDetails.jobcategory %>
+                </h3>
+                <span class="card-title text-success fs-2 fw-bold">
+                    <%= jobDetails.companyname %>
+                </span>
+                <% if(locals.userEmail) %>
+                    <span class="fs-4"><a href="/jobs/<%= jobDetails.id%>/update"> <i
+                                class="fa-solid fa-pen-to-square mx-2 text-primary"></i></a></span>
+                    <span class="fs-4"><a href="/jobs/<%= jobDetails.id%>/delete"><i
+                                class="fa-solid fa-trash text-danger"></i></a></span>
+                    <% %>
+                        <h5 class="card-title designation">
+                            <%= jobDetails.jobdesignation %>
+                        </h5>
+                        <p class="card-title location text-black fw-bold"> <i class="fa-solid fa-location-dot"></i>
+                            <%= jobDetails.joblocation %>
+                        </p>
+                        <h6 class="card-title text-success">Apply By :
+                            <%=jobDetails.applyby %>
+                        </h6>
+                        <h6 class="card-title text-info fw-bold"><i class="fa-solid fa-indian-rupee-sign"></i>
+                            <%= jobDetails.salary %>
+                        </h6>
+                        <h6 class="card-title text-black"><i class="fa-solid fa-users"></i> Applicants :
+                            <a href="/jobs/<%= jobDetails.id %>/applicants"
+                                class="text-success fw-bold btn  text-decoration-none fs-5">
+                                <%= jobDetails.noOfApplicants %>
+                            </a>
+                        </h6>
+                        <h6 class="card-title">Numbers of openings :
+                            <%= jobDetails.numberofopenings %>
+                        </h6>
+                        <h6 class="text-danger">
+                            <% jobDetails.skillsrequired.forEach((skill)=> { %>
+                                <span class="btn btn-outline-warning m-1">
+                                    <%= skill%>
+                                </span>
+                                <% }) %>
+                        </h6>
+                        <!-- <h6 class="card-title my-3">
+                    <a class="btn btn-outline-primary" href="/apply/:id" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        Apply Now
+                    </a>
+                </h6> -->
+                        <h6 class="card-title my-3">
+                            <a class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Apply Now
+                            </a>
+                        </h6>
+                        <h6 class="card-title">
+                            <p class="btn btn-success text-white">Posted :
+                                <%=jobDetails.jobposted %>
+                            </p>
+                        </h6>
+            </div>
+        </div>
+
+        <!-- Button trigger modal -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 p-3" id="exampleModalLabel">Easily</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Apply in less then 1 minute</h1>
+
+                        <form action="/apply/<%= jobDetails.id%>" method="post" class="loginForm"
+                            enctype="multipart/form-data">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Name</span>
+                                <input type="text" class="form-control" name="name" aria-label="Username"
+                                    aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Email</span>
+                                <input type="text" class="form-control" name="email" aria-label="email"
+                                    aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Mobile No</span>
+                                <input type="text" class="form-control" name="contact" aria-label="mobile"
+                                    aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Resume</span>
+                                <input type="file" class="form-control" accept="file/*" name="resumePath"
+                                    aria-label="resumePath" aria-describedby="basic-addon1">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <button type="submit" class="btn  loginBtn">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

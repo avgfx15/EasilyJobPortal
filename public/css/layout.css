@@ -1,0 +1,54 @@
+@import 'landingPage.css';
+@import 'jobPage.css';
+@import 'loginPage.css';
+
+* {
+    font-family: 'Mulish', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
+    font-weight: 300;
+}
+
+.pageHeight {
+    height: 100%;
+}
+
+.row {
+    --bs-gutter-x: 0;
+}
+
+
+
+.fullPage {
+    background-color: rgb(24, 22, 66);
+    height: 100%;
+    width: 100%;
+}
+
+.navColor {
+    background-color: rgb(24, 22, 66);
+    box-shadow: 1px 1px 1px rgb(37, 35, 76);
+}
+
+.navColor:hover {
+    box-shadow: 2px 3px 3px rgb(37, 37, 76);
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 1.4rem;
+}
+
+.nav-link {
+    color: white;
+    font-size: 1.1rem;
+}
+
+.navText:hover {
+    color: rgb(202, 202, 202);
+
+}
+
+.blockContent {
+    display: block;
+}

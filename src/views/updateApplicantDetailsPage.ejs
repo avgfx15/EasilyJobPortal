@@ -1,0 +1,48 @@
+<div class="min-vh-100 p-5 mt-5">
+    <div class="container" role="dialog">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 p-3" id="exampleModalLabel">Easily</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Update Your Details</h1>
+                    <form action="/jobs/<%= jobExist.id %>/applicants/<%= applicant.applicantid %>/update" method="post"
+                        class="loginForm" enctype="multipart/form-data">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Name</span>
+                            <input type="text" class="form-control" name="name" aria-label="Username"
+                                value="<%= applicant.name %>" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Email</span>
+                            <input type="text" class="form-control" name="email" aria-label="email"
+                                value="<%= applicant.email %>" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Mobile No</span>
+                            <input type="text" class="form-control" name="contact" aria-label="mobile"
+                                value="<%= applicant.contact %>" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Resume</span>
+                            <input type="file" class="form-control" accept="file/*" name="resumePath"
+                                aria-label="resumePath" value="<%= applicant.resumepath %>"
+                                aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <button type="submit" class="btn  loginBtn">Update</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer mt-2">
+                    <button type="button" class="btn btn-secondary mx-2" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

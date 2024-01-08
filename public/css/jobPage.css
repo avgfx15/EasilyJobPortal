@@ -1,0 +1,64 @@
+.jobContainer {
+    width: 50%;
+}
+
+.jobCard {
+    margin: 0.5rem;
+    min-width: 18rem;
+    max-width: 50%;
+    height: 28rem;
+}
+
+.jobStatus {
+    padding: 0.2rem 0.8rem;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    color: white;
+    border: 1px solid white;
+}
+
+.jobStatus:hover {
+    background-color: bisque;
+}
+
+.jobStatus i {
+    color: aquamarine;
+}
+
+.cName {
+    color: #F7C107;
+}
+
+.designation {
+    color: rgb(7, 109, 226);
+}
+
+.location {
+    color: white;
+}
+
+.skills {
+    color: aqua;
+    border: 1px solid aqua;
+}
+
+
+button.btn {
+    margin-top: auto;
+}
+
+.viewMoreBtn {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.viewMoreBtn a {
+    text-decoration: none;
+}
+
+.viewMoreBtn:hover {
+    font-size: 1.3rem;
+    color: white;
+}

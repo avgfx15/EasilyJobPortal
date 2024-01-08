@@ -1,0 +1,25 @@
+<div class="min-vh-100 p-5 mt-5">
+    <div class="container">
+        <form action="/login" method="post" class="loginForm">
+            <%if(errorMessage){ %>
+                <div class="alert alert-danger" role="alert">
+                    <%= errorMessage %>
+                </div>
+                <%}%>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Email</span>
+                        <input type="text" class="form-control" name="email" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Password</span>
+                        <input type="text" class="form-control" name="password" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <button type="submit" class="btn  loginBtn">Login</button>
+                        <p class="ms-3 text-white">If not register yet <a href="/register">Click To Register</a></p>
+                    </div>
+        </form>
+    </div>
+</div>

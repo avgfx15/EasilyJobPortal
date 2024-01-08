@@ -1,0 +1,59 @@
+<div class="min-vh-100 p-5 mt-5">
+    <div class="container mx-auto p-2 ">
+        <div>
+            <h1 class="text-white mb-5">Get All Applicants For this Job</h1>
+        </div>
+        <div class="d-flex align-items-centre justify-content-around flex-wrap">
+
+            <% if( noOfApplicants==0) { %>
+
+                <h1 class="text-danger py-2 px-5 bg-light">Still No Applicant</h1>
+
+                <% } else { %>
+                    <table class="table table-warning rounded-4">
+                        <thead>
+                            <tr class="text-center">
+                                <th scope="col " class="text-danger fw-bolder">No</th>
+                                <th scope="col" class="text-danger fw-bolder">Name</th>
+                                <th scope="col" class="text-danger fw-bolder">Email</th>
+                                <th scope="col" class="text-danger fw-bolder">Contact No</th>
+                                <th scope="col" class="text-danger fw-bolder">View Applicant</th>
+                                <th scope="col" class="text-danger fw-bolder">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <% allApplicants.forEach((applicant)=> { %>
+                                <tr>
+                                    <th scope="row" class="text-danger text-center">
+                                        <%= applicant.applicantid %>
+                                    </th>
+                                    <td>
+                                        <%= applicant.name %>
+                                    </td>
+                                    <td class="text-center">
+                                        <%= applicant.email %>
+                                    </td>
+                                    <td class="text-center">
+                                        <%= applicant.contact %>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="/jobs/<%= jobExist.id %>/applicants/<%= applicant.applicantid %>"
+                                            class="btn btn-primary"> <i class="fa-solid fa-circle-info  fs-5"></i></a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="/jobs/<%= jobExist.id %>/applicants/<%= applicant.applicantid %>/update"
+                                            class="btn btn-success"> <i class="fa-solid fa-pen-to-square"></i></a>
+                                        <a href="/jobs/<%= jobExist.id %>/applicants/<%= applicant.applicantid %>/delete"
+                                            class="btn btn-danger"> <i class="fa-solid fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                                <% }) %>
+
+                        </tbody>
+                    </table>
+                    <% } %>
+        </div>
+        <a class=" btn btn-info text-white text-decoration-none py-2 m-3" href="/jobs">Back To All Applicants Page</a>
+    </div>
+</div>
